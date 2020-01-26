@@ -1,0 +1,56 @@
+.control {
+    border: solid black 1px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 75px;
+
+    .control-display {
+        text-align: center;
+        font-size: 16pt;
+    }
+
+    .control-display-value {
+        font-weight: bold;
+    }
+
+    .control-display-text-box {
+        width: 75%;
+        border-bottom: solid black 1px;
+        margin: auto;
+        margin-bottom: 25px;
+        min-width: 250px;
+
+        .control-display-text {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+    }
+
+    .control-buttons {
+        transform: translateX(50%);
+        float: left;
+    }
+
+    .btn {
+        display: inline-block;
+        width: 200px;
+        margin: 10px;
+        height: 50px;
+        background-color: grey;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+        
+    .btn-control {
+        background-color: rgba(62, 229, 118, 1);
+
+        span {
+            display: block;
+            color: white;
+            font-size: 32pt;
+            font-weight: bolder;
+            text-align: center;
+            transform: translateY(-10%);
+        }
+    }
+}
