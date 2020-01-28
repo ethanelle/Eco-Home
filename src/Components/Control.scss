@@ -11,6 +11,11 @@
 
     .control-display-value {
         font-weight: bold;
+        width: 50px;
+        border: none;
+        border-bottom: dashed black 1px;
+        font-size: 16pt;
+        text-align: center;
     }
 
     .control-display-text-box {
@@ -24,6 +29,16 @@
             margin-left: 5px;
             margin-right: 5px;
         }
+    }
+
+    .btn-control-set {
+        display: inline-block;
+        width: 50px;
+        border: solid black 1px;
+        border-radius: 8px;
+        background-color: rgba(0,0,0,0);
+        padding: 2px;
+        cursor: pointer;
     }
 
     .control-buttons {

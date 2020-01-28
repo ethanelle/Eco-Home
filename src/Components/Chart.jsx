@@ -1,5 +1,5 @@
 import React from 'react';
-import {Bar} from 'react-chartjs-2';
+import {Line} from 'react-chartjs-2';
 import './Chart.scss';
 
 class Chart extends React.Component {
@@ -24,17 +24,13 @@ class Chart extends React.Component {
     render() {
         return (
           <div>
-            <Bar
+            <Line
               data={this.state}
               options={{
                 title:{
                   display:true,
                   text:'Average Rainfall per month',
                   fontSize:20
-                },
-                legend:{
-                  display:true,
-                  position:'right'
                 }
               }}
             />

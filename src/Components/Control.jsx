@@ -6,19 +6,32 @@ class Control extends React.Component {
         super(props);
 
         this.state = {
-            current: 0
+            current_setting: 0,
+            current_temporary: 0
         }
     }
 
     incrementCurrent(e) {
         this.setState({
-            current: this.state.current + 1
+            current_setting: this.state.current_setting + 1
         });
     }
 
     decrementCurrent(e) {
         this.setState({
-            current: this.state.current - 1
+            current_setting: this.state.current_setting - 1
+        });
+    }
+
+    changeTempSetting(e) {
+        this.setState({
+            current_temporary: e.target.value
+        });
+    }
+
+    setTemperature() {
+        this.setState({
+            current_setting: this.state.current_temporary
         });
     }
 
@@ -28,7 +41,9 @@ class Control extends React.Component {
                 <div className="control-display">
                     <div className="control-display-text-box">
                         <span className="control-display-text">Current setting:</span>
-                        <span className="control-display-text control-display-value">{this.state.current}</span>
+                        <input className="control-display-text control-display-value" 
+                            value={this.state.current_setting} onChange={this.changeTempSetting.bind(this)} />
+                        <button className="btn-control-set" onClick={this.changeTempSetting.bind(this)}>Set</button>
                     </div>
                 </div>
                 <div className="control-buttons">
