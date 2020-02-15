@@ -6,32 +6,42 @@ class Control extends React.Component {
         super(props);
 
         this.state = {
-            current_setting: 0,
-            current_temporary: 0
+            setting: 0,
+            updatable: false,
+            temporary: "0",
         }
+
+        this.incrementSetting = this.incrementSetting.bind(this);
+        this.decrementSetting = this.decrementSetting.bind(this);
+        this.handleEnteredSetting = this.handleEnteredSetting.bind(this);
+        this.handleSetSetting = this.handleSetSetting.bind(this);
     }
 
-    incrementCurrent(e) {
+    incrementSetting(e) {
         this.setState({
-            current_setting: this.state.current_setting + 1
+            setting: this.state.setting + 1,
+            temporary: this.state.setting + 1
         });
     }
 
-    decrementCurrent(e) {
+    decrementSetting(e) {
         this.setState({
-            current_setting: this.state.current_setting - 1
+            setting: this.state.setting - 1, 
+            temporary: this.state.setting - 1
         });
     }
 
-    changeTempSetting(e) {
+    handleEnteredSetting(e) {
         this.setState({
-            current_temporary: e.target.value
+            temporary: e.target.value,
+            updatable: true
         });
     }
 
-    setTemperature() {
+    handleSetSetting(e) {
         this.setState({
-            current_setting: this.state.current_temporary
+            setting: parseInt(this.state.temporary),
+            updatable: false
         });
     }
 
@@ -39,21 +49,26 @@ class Control extends React.Component {
         return (
             <div className="control">
                 <div className="control-display">
-                    <div className="control-display-text-box">
-                        <span className="control-display-text">Current setting:</span>
-                        <input className="control-display-text control-display-value" 
-                            value={this.state.current_setting} onChange={this.changeTempSetting.bind(this)} />
-                        <button className="btn-control-set" onClick={this.changeTempSetting.bind(this)}>Set</button>
-                    </div>
+                    <span>Current setting:</span>
+                    <input className="control-display-value" 
+                        type="text"                             
+                        value={this.state.temporary} 
+                        onChange={this.handleEnteredSetting} />
                 </div>
                 <div className="control-buttons">
                     <div className="btn btn-control btn-control-increment"
-                        onClick={this.incrementCurrent.bind(this)}>
+                        onClick={this.incrementSetting}>
                         <span>+</span>
                     </div>
                     <div className="btn btn-control btn-control-decrement"
-                        onClick={this.decrementCurrent.bind(this)}>
+                        onClick={this.decrementSetting}>
                         <span>-</span>
+                    </div>
+                </div>
+                <div className="set-button">
+                    <div className="btn-set"
+                        onClick={this.handleSetSetting} >
+                        <span>Set thermostat</span>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,12 @@
+$color-dark: #424874;
+$color-light: #d6e5e3;
+$color-med: #a6b1e1;
+
 .header {
-    padding: 5%;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 20px;
 
     .header-title {
         display: inline-block;
@@ -37,17 +44,17 @@
         }
 
         .temp-main {
-            background-color: rgba(62, 229, 118, 1);
+            background-color: $color-med;
             border-radius: 20px;
         }
 
         .temp-secondary {
-            background-color: rgba(62, 156, 229, 1);
+            background-color: $color-med;
             border-radius: 20px;
         }
 
         .temp-tertiary {
-            background-color: rgba(229, 229, 62, 1);
+            background-color: $color-med;
             border-radius: 20px;
         }
     }

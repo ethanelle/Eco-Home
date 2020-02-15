@@ -4,6 +4,7 @@ import Header from './Components/Header.jsx';
 import Control from './Components/Control.jsx';
 import Chart from './Components/Chart.jsx';
 
+
 function App() {
   return (
     <div className="App">
